@@ -1,10 +1,11 @@
 package com.stream;
 
+import org.apache.commons.io.IOUtils;
 import org.junit.Before;
 import org.junit.Test;
-import sun.misc.IOUtils;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * 输入流转String
@@ -38,6 +39,27 @@ public class InputStream2Char {
         }
         String outString = byteArrayOutputStream.toString("UTF-8");
         System.out.println(outString);
+    }
+
+    /**
+     * 使用Apache的IO工具包转换
+     * @throws IOException
+     */
+    @Test
+    public void useIOUtils() throws IOException {
+        InputStream inputStream = this.readInputStream();
+        // 利用IOUtils工具将字节输入流（InputStream）转到字符输出流（Writer）
+//        Writer writer = new StringWriter();
+//        IOUtils.copy(inputStream,writer, StandardCharsets.UTF_8);
+//        System.out.println(writer.toString());
+
+        // 输入流转成字符数组，然后使用String类将char[]转为String
+//        char[] chars = IOUtils.toCharArray(inputStream, StandardCharsets.UTF_8);
+//        System.out.println(new String(chars));
+
+        //  输入流转成字节数组，然后使用String类将byte[]转为String
+        byte[] bytes = IOUtils.toByteArray(inputStream);
+        System.out.println(new String(bytes, StandardCharsets.UTF_8));
     }
 
 }
