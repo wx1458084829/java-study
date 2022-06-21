@@ -1,4 +1,4 @@
-package collection;
+package com.namo.collection;
 
 import org.junit.Test;
 

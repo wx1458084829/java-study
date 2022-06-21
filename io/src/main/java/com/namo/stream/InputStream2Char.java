@@ -1,4 +1,4 @@
-package com.stream;
+package com.namo.stream;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Before;
