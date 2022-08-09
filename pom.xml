@@ -11,6 +11,7 @@
     <modules>
         <module>io</module>
         <module>collection</module>
+        <module>annotation</module>
     </modules>
 
     <properties>
